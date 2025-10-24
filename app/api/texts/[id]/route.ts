@@ -1,10 +1,10 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { PrismaClient } from '@prisma/client'
 import { prisma } from '@/prisma/prisma-client'
 
 // Обновить текст
 export async function PUT(
-  request: Request, {params}: {params: Promise<{ id: string }>}
+  request: NextRequest, {params}: {params: Promise<{ id: string }>}
 ) {
   try {
     const { id } = await params

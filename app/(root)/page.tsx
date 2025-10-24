@@ -5,17 +5,21 @@ import { NavBg } from "@/components/shared/nav-bg";
 import PageLoader from "@/components/shared/pageLoader";
 import { prisma } from "@/prisma/prisma-client";
 import Image from "next/image";
+import { Suspense } from "react";
+export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const houses = await prisma.house.findMany({
   })
   return (
     <div className="">
+      <Suspense>
       <PageLoader/>
       <Header/>
       <MainBg/>
       <NavBg/>
       <Catalog items={houses}/>
+      </Suspense>
     </div>
   );
 }
