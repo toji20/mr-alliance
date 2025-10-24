@@ -30,11 +30,13 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
   const openModal = () => {
     setIsModalOpen(true);
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden'
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = ''
   };
 
   const formatPrice = (price: number) => {
@@ -111,14 +113,14 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/80 bg-opacity-80 flex items-center justify-center z-50 p-0 md:p-6"
+          className="fixed inset-0 bg-black/80 bg-opacity-80 flex items-center justify-center z-50 p-0 md:p-6 overflow-hidden"
           onClick={closeModal}
         >
           <motion.div 
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", damping: 25 }}
-            className="bg-white md:rounded-2xl rounded-[0] w-full max-w-4xl max-h-[100vh] md:max-h-[90vh] overflow-y-auto mx-auto"
+            className="bg-white md:rounded-2xl rounded-[0] w-full max-w-4xl max-h-[100%] md:max-h-[90vh] overflow-y-auto mx-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Хедер модалки */}

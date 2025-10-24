@@ -65,7 +65,7 @@ export const MainBg: React.FC<React.PropsWithChildren<Props>> = ({ className, ch
   };
 
   return (
-    <div className={cn('w-[100%] h-screen overflow-hidden relative', className)}>
+    <div className={cn('w-[100%] h-[95vh] overflow-hidden relative', className)}>
       <div 
         className="flex h-full transition-transform duration-600 ease-in-out"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -79,8 +79,8 @@ export const MainBg: React.FC<React.PropsWithChildren<Props>> = ({ className, ch
               <div className='text-center md:pl-[255px] pl-[0]'>
                 <h1 className='main-bg__title'>{slide.title}</h1>
                 <div className='main-bg__title-btns flex justify-center'>
-                  <button className='main-bg__title-btn'>ПРОЕКТЫ</button>
-                  <button className='main-bg__title-btn'>КОНТАКТЫ</button>
+                  <a href="/catalog"><button className='main-bg__title-btn md:block hidden'>ПРОЕКТЫ</button></a>
+                  <a href="/contacts"><button className='main-bg__title-btn'>КОНТАКТЫ</button></a>
                 </div>
               </div>
             </div>

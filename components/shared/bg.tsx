@@ -23,7 +23,7 @@ export const Bg: React.FC<React.PropsWithChildren<Props>> = ({
     
     return (
         <div 
-              className={cn('apartment-renovation__container w-[100%] h-screen overflow-hidden relative')}
+              className={cn('apartment-renovation__container w-[100%] h-[95vh] overflow-hidden relative')}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -42,8 +42,8 @@ export const Bg: React.FC<React.PropsWithChildren<Props>> = ({
                           <div className='text-center md:pl-[255px] pl-[0]'>
                             <h1 className='main-bg__title'>{title}</h1>
                             <div className='main-bg__title-btns flex justify-center'>
-                              <button className='main-bg__title-btn'>ЗАКАЗАТЬ УСЛУГУ</button>
-                              <a href={url}><button className='main-bg__title-btn'>{btnText}</button></a>
+                              <a href="/contacts"><button className='main-bg__title-btn'>ЗАКАЗАТЬ УСЛУГУ</button></a>
+                              <a href={url}><button className='main-bg__title-btn md:block hidden'>{btnText}</button></a>
                             </div>
                           </div>
                         </div>

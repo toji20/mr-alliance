@@ -8,6 +8,7 @@ async function main() {
   await prisma.$executeRaw`TRUNCATE TABLE "House" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "GalleryPhoto" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "Review" RESTART IDENTITY CASCADE`;
+  await prisma.$executeRaw`TRUNCATE TABLE "User" RESTART IDENTITY CASCADE`;
   
   console.log('🌱 Начинаем сидинг текстов для дизайн-проекта...')
 

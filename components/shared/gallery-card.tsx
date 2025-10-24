@@ -73,15 +73,34 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
             className="fixed inset-0 bg-stone-900 bg-opacity-95 flex items-center justify-center z-50 md:p-4 p-[0]"
             onClick={onCloseModal}
           >
+            {/* Мобильный хедер с крестиком и счетчиком */}
+            <div className="md:hidden absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+              <div className="bg-stone-800 bg-opacity-50 text-amber-50 px-3 py-1.5 rounded-full text-sm">
+                {currentIndex + 1} / {galleryImages.length}
+              </div>
+              <button 
+                className="w-8 h-8 bg-stone-800 rounded-full flex items-center justify-center text-amber-50 hover:bg-stone-700 transition-colors"
+                onClick={onCloseModal}
+              >
+                <X size={16}/>
+              </button>
+            </div>
+
+            {/* Десктопный крестик */}
             <button 
-              className="cursor-pointer absolute top-6 right-6 z-10 w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-amber-50 hover:bg-stone-700 transition-colors"
+              className="hidden md:flex cursor-pointer absolute top-6 right-6 z-10 w-10 h-10 bg-stone-800 rounded-full items-center justify-center text-amber-50 hover:bg-stone-700 transition-colors"
               onClick={onCloseModal}
             >
-              <X size={15}/>
+              <X size={20}/>
             </button>
 
+            {/* Десктопный счетчик */}
+            <div className="hidden md:flex absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 bg-stone-800 bg-opacity-50 text-amber-50 px-4 py-2 rounded-full text-sm">
+              {currentIndex + 1} / {galleryImages.length}
+            </div>
+
             <button 
-              className="cursor-pointer absolute left-6 top-1/2 transform -translate-y-1/2 z-10 md:w-12 md:h-12 w-8 h-8 bg-stone-800 bg-opacity-50 rounded-full flex items-center justify-center text-amber-50 hover:bg-opacity-70 transition-all"
+              className="cursor-pointer absolute left-4 md:left-6 top-1/2 transform -translate-y-1/2 z-10 md:w-12 md:h-12 w-8 h-8 bg-stone-800 bg-opacity-50 rounded-full flex items-center justify-center text-amber-50 hover:bg-opacity-70 transition-all"
               onClick={(e) => {
                 e.stopPropagation()
                 onPrevImage()
@@ -91,7 +110,7 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
             </button>
 
             <button 
-              className="cursor-pointer absolute right-6 top-1/2 transform -translate-y-1/2 z-10 md:w-12 md:h-12 w-8 h-8 bg-stone-800 bg-opacity-50 rounded-full flex items-center justify-center text-amber-50 hover:bg-opacity-70 transition-all"
+              className="cursor-pointer absolute right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-10 md:w-12 md:h-12 w-8 h-8 bg-stone-800 bg-opacity-50 rounded-full flex items-center justify-center text-amber-50 hover:bg-opacity-70 transition-all"
               onClick={(e) => {
                 e.stopPropagation()
                 onNextImage()
@@ -99,10 +118,6 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
             >
               <ChevronRight className='md:w-7 md:h-7 w-4 h-4'/>
             </button>
-
-            <div className="absolute md:bottom-6 bottom-150 left-1/2 transform -translate-x-1/2 z-10 bg-stone-800 bg-opacity-50 text-amber-50 px-4 py-2 rounded-full text-sm">
-              {currentIndex + 1} / {galleryImages.length}
-            </div>
 
             <motion.div
               key={currentIndex}

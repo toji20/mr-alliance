@@ -136,7 +136,7 @@ export const Header: React.FC<React.PropsWithChildren<Props>> = ({ className, ch
                                 <li 
                                     key={item.name}
                                     className={cn(
-                                        'mobile-nav-item cursor-pointer transition-colors duration-200 py-3 px-4 rounded text-white',
+                                        'mobile-nav-item cursor-pointer transition-colors duration-200 py-3 px-4 pl-[0] rounded text-white',
                                         activeItem === item.name 
                                             ? 'text-beige-500 bg-beige-50' 
                                             : 'hover:bg-gray-800'
@@ -157,7 +157,7 @@ export const Header: React.FC<React.PropsWithChildren<Props>> = ({ className, ch
                                 <li 
                                     key={item.name}
                                     className={cn(
-                                        'mobile-function-item flex items-center cursor-pointer transition-colors duration-200 py-3 px-4 rounded text-white',
+                                        'mobile-function-item flex items-center cursor-pointer transition-colors duration-200 py-3 px-4 pl-[0] rounded text-white',
                                         activeItem === item.name 
                                             ? 'text-beige-500 bg-beige-50' 
                                             : 'hover:bg-gray-800'

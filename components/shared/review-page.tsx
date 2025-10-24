@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Star, Filter, Search, MessageCircle } from 'lucide-react';
 import { ReviewCard } from './review-card';
@@ -15,6 +15,11 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [ratingFilter, setRatingFilter] = useState<number | null>(null);
   const [sortBy, setSortBy] = useState<'date' | 'rating'>('date');
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Фильтрация и сортировка отзывов
   const filteredReviews = items
@@ -32,6 +37,17 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
     });
 
   const averageRating = items.reduce((acc, review) => acc + review.rating, 0) / items.length;
+
+  if (!isClient) {
+    return (
+      <div className="min-h-screen bg-stone-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-12 h-12 border-4 border-amber-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-stone-600">Загрузка...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-stone-50 md:py-8 py-4 pt-30 md:pl-[18%] pl-[0]">
@@ -160,27 +176,51 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
           </div>
         </motion.div>
 
-        {/* Сетка отзывов */}
+        {/* Сетка отзывов с горизонтальным скроллом на мобильных */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12 max-h-[500px] overflow-auto py-[15px] md:py-[20px] px-[8px] md:px-[10px] border-[3px] border-t-[#ebb842] border-b-[#ebb842]"
+          className="mb-8 md:mb-12"
         >
-          {filteredReviews.map((review, index) => (
-            <motion.div
-              key={review.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <ReviewCard
-                rating={review.rating}
-                text={review.text}
-                date={String(review.date)}
-              />
-            </motion.div>
-          ))}
+          {/* Десктопная версия - обычная сетка */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[500px] overflow-auto py-[20px] px-[10px] border-[3px] border-t-[#ebb842] border-b-[#ebb842]">
+            {filteredReviews.map((review, index) => (
+              <motion.div
+                key={review.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <ReviewCard
+                  rating={review.rating}
+                  text={review.text}
+                  date={new Date(review.date).toISOString()}
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Мобильная версия - горизонтальный скролл */}
+          <div className="md:hidden">
+            <div className="flex overflow-x-auto pb-4 -mx-4 px-4 space-x-4 scrollbar-hide">
+              {filteredReviews.map((review, index) => (
+                <motion.div
+                  key={review.id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex-shrink-0 w-[85vw] max-w-sm"
+                >
+                  <ReviewCard
+                    rating={review.rating}
+                    text={review.text}
+                    date={new Date(review.date).toISOString()}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         {/* Сообщение если нет отзывов */}
