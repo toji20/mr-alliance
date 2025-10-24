@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 import { PrismaClient } from '@prisma/client'
+import { prisma } from '@/prisma/prisma-client';
 
-const prisma = new PrismaClient()
+export const dynamic = 'force-dynamic';
 
 // GET все тексты
 export async function GET() {

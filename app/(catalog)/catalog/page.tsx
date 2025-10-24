@@ -6,7 +6,7 @@ export default async function Home() {
   const houses = await prisma.house.findMany({
     })
   return (
-    <div className="pt-20">
+    <div className="md:pt-[0] pt-20">
       <Catalog items={houses}/>
     </div>
   );
