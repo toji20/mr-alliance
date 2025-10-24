@@ -22,12 +22,12 @@ export async function PUT(
 
 // Удалить текст
 export async function DELETE(
-  request: Request,
-  { params }: { params: { id: string } }
+  request: Request, {params}: {params: Promise<{ id: string }>}
 ) {
   try {
+    const { id } = await params
     await prisma.textContent.delete({
-      where: { id: params.id }
+      where: { id: id }
     })
     return NextResponse.json({ message: 'Текст удален' })
   } catch (error) {
