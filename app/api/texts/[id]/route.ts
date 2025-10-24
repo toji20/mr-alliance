@@ -5,13 +5,13 @@ const prisma = new PrismaClient()
 
 // Обновить текст
 export async function PUT(
-  request: Request,
-  { params }: { params: { id: string } }
+  request: Request, {params}: {params: Promise<{ id: string }>}
 ) {
   try {
+    const { id } = await params
     const { content } = await request.json()
     const text = await prisma.textContent.update({
-      where: { id: params.id },
+      where: { id: id },
       data: { content }
     })
     return NextResponse.json(text)
