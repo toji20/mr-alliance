@@ -1,0 +1,38 @@
+.apartment-renovation__container {
+    background-image: url('/main-bg-2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.3s;
+}
+.apartment-renovation__container:hover {
+    
+}
+.apartment-renovation__container {
+    position: relative;
+    overflow: hidden;
+}
+
+.apartment-renovation__container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/main-bg-2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.7s ease-out;
+    z-index: 1;
+}
+
+.apartment-renovation__container:hover::before {
+    transform: scale(1.05);
+}
+
+.main-bg {
+    position: relative;
+    z-index: 2;
+}

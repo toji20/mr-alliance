@@ -1,0 +1,89 @@
+// prisma/schema.prisma
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
+}
+
+model TextContent {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  content   String
+  category  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model User {
+    id Int @id @default(autoincrement())
+
+    fullName String
+    email    String    @unique
+    password String
+    role     UserRole  @default(USER)
+    verified DateTime?
+
+    provider   String?
+    providerId String?
+    token String?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model House {
+    id Int @id @default(autoincrement())
+
+    name String
+    price Int
+    imageUrl String
+    favorite Boolean? @default(false)
+    descr String?
+    size Int
+
+    features String[]
+
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Feature {
+    id Int @id @default(autoincrement())
+
+    name String
+
+    houseId Int
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model GalleryPhoto {
+    id Int @id @default(autoincrement())
+
+    name String
+    imageUrl String
+    descr String?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Review {
+    id Int @id @default(autoincrement())
+
+    text String
+    rating Int
+
+    date DateTime @default(now())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+enum UserRole {
+    USER
+    ADMIN
+}

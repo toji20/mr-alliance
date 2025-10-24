@@ -1,0 +1,104 @@
+.main-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.main-bg__title {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 78px;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.main-bg--one {
+    background-image: url('/main-bg-3.png');
+}
+.main-bg--two {
+    background-image: url('/main-bg-2.png');
+}
+.main-bg--three {
+    background-image: url('/main-bg-1.png');
+}
+.main-bg--four {
+    background-image: url('/main-bg-4.png');
+}
+.main-bg--five {
+    background-image: url('/main-bg-5.png');
+}
+.main-bg--six {
+    background-image: url('/main-bg-6.png');
+}
+
+.main-bg__title-btns {
+    gap: 40px;
+}
+
+.main-bg__title-btn {
+    background: none;
+    border: 2px solid white;
+    font-size: 20px;
+    padding: 23px 100px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    width: 345px;
+}
+
+.main-bg__title-btn:hover {
+    background: white;
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Анимация появления контента */
+.main-bg > div {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Убедимся, что все элементы занимают всю высоту */
+html, body, #__next {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .main-bg__title {
+        font-size: 30px;
+        margin-bottom: 40px;
+        max-width: 300px;
+    }
+    
+    .main-bg__title-btn {
+        padding: 15px 40px;
+        font-size: 16px;
+        width: 200px;
+    }
+    
+    .main-bg__title-btns {
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+}

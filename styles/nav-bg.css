@@ -1,0 +1,49 @@
+.nav-bg__container {
+    background-image: url('/nav-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nav-bg__title {
+    font-size: 40px;
+    color: white;
+    border-bottom: 1px solid #D9D9D963;
+    padding: 28px 55px;
+    width: 100%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.717);
+    font-weight: 400;
+}
+.nav-bg__container-block {
+    width: 100%;
+    padding-left: 18%;
+}
+.nav-bg__list-item {
+    font-size: 22px;
+    padding: 23px 55px;
+    border-bottom: 1px solid #D9D9D963;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+    width: 100%;
+    transition: all 0.4s;
+}
+.nav-bg__list-item:hover {
+    background-color: white;
+    color: black;
+    transform: scaleY(1.1);
+}
+.nav-bg__container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .nav-bg__container--zoomed {
+  }
+  

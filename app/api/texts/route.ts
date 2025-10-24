@@ -1,0 +1,16 @@
+import { NextResponse } from 'next/server'
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
+// GET все тексты
+export async function GET() {
+  try {
+    const texts = await prisma.textContent.findMany()
+    return NextResponse.json(texts)
+  } catch (error) {
+    return NextResponse.json({ error: 'Ошибка загрузки' }, { status: 500 })
+  }
+}
+
+// Создать новый текст
