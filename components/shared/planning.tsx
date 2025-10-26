@@ -265,12 +265,16 @@ export default function DesignArticle() {
                       {getText('services_note', 'Два формата сотрудничества')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-2 md:gap-3">
-                      <button className="flex-1 bg-[#ffe6b6] text-stone-900 font-medium py-1.5 md:py-2 px-2 md:px-3 rounded-lg hover:bg-amber-400 transition-colors text-xs">
-                        {getText('service_button_1', 'Адаптация проекта')}
+                     <a href="/catalog" className='w-full'>
+                     <button className="w-full flex-1 bg-[#ffe6b6] text-stone-900 font-medium py-1.5 md:py-2 px-2 md:px-3 rounded-lg hover:bg-amber-400 transition-colors text-xs">
+                        {getText('service_button_1', 'Готовые проекты')}
                       </button>
-                      <button className="flex-1 bg-transparent border border-amber-400 text-amber-400 font-medium py-1.5 md:py-2 px-2 md:px-3 rounded-lg hover:bg-amber-400 hover:text-stone-900 transition-colors text-xs">
+                     </a>
+                      <a href="/contacts" className='w-full'>
+                      <button className="w-full flex-1 bg-transparent border border-amber-400 text-amber-400 font-medium py-1.5 md:py-2 px-2 md:px-3 rounded-lg hover:bg-amber-400 hover:text-stone-900 transition-colors text-xs">
                         {getText('service_button_2', 'Индивидуальное решение')}
                       </button>
+                      </a>
                     </div>
                   </div>
                 </div>

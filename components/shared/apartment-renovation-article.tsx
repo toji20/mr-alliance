@@ -258,12 +258,16 @@ return (
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                <button className="flex-1 bg-[#ffe6b6] text-stone-900 font-semibold py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-amber-400 transition-colors duration-300 text-sm md:text-base">
+                <a href="/contacts" className='w-full'>
+                <button className="w-full flex-1 bg-[#ffe6b6] text-stone-900 font-semibold py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-amber-400 transition-colors duration-300 text-sm md:text-base">
                   {getText('calc_button_primary', 'Рассчитать стоимость')}
                 </button>
-                <button className="flex-1 bg-transparent border-2 border-amber-400 text-amber-400 font-semibold py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-amber-400 hover:text-stone-900 transition-colors duration-300 text-sm md:text-base">
+                </a>
+                <a href="/contacts" className='w-full'>
+                <button className="w-full flex-1 bg-transparent border-2 border-amber-400 text-amber-400 font-semibold py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-amber-400 hover:text-stone-900 transition-colors duration-300 text-sm md:text-base">
                   {getText('calc_button_secondary', 'Консультация')}
                 </button>
+                </a>
               </div>
             </div>
             <div className="bg-white md:rounded-xl rounded-[0] md:p-6 p-4 shadow-sm border border-stone-200">
