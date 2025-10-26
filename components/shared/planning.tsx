@@ -13,14 +13,12 @@ export default function DesignArticle() {
   const [texts, setTexts] = useState<Record<string, string>>({})
   const [loading, setLoading] = useState(true)
 
-  // Загрузка текстов из базы данных
   useEffect(() => {
     const loadTexts = async () => {
       try {
         const response = await fetch('/api/texts')
         const data: TextContent[] = await response.json()
         
-        // Преобразуем массив в объект для удобного доступа
         const textsMap = data.reduce((acc, text) => {
           acc[text.key] = text.content
           return acc
@@ -37,7 +35,6 @@ export default function DesignArticle() {
     loadTexts()
   }, [])
 
-  // Функция для получения текста по ключу
   const getText = (key: string, fallback: string = '') => {
     return texts[key] || fallback
   }
@@ -53,7 +50,6 @@ export default function DesignArticle() {
     )
   }
 
-  // Данные для блоков (теперь с загрузкой из БД)
   const keyPoints = [
     {
       icon: "📏",
@@ -107,13 +103,10 @@ export default function DesignArticle() {
           </p>
         </motion.div>
 
-        {/* Основной контент в асимметричном layout */}
         <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-start">
           
-          {/* Левая часть - текстовая */}
           <div className="lg:w-7/12 space-y-6 md:space-y-10">
 
-            {/* Блок с цитатой */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -136,7 +129,6 @@ export default function DesignArticle() {
               </div>
             </motion.div>
 
-            {/* Блок специализации */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -168,7 +160,6 @@ export default function DesignArticle() {
               </div>
             </motion.div>
 
-            {/* Блок индивидуального подхода */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -210,10 +201,8 @@ export default function DesignArticle() {
             </motion.div>
           </div>
 
-          {/* Правая часть - акценты и важные моменты */}
           <div className="lg:w-5/12 space-y-4 md:space-y-6">
             
-            {/* Блок "Что важно учесть" */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -252,7 +241,6 @@ export default function DesignArticle() {
                 </div>
               </div>
 
-              {/* Блок услуг */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

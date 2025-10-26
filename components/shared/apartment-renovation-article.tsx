@@ -153,7 +153,6 @@ return (
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6 md:space-y-8"
           >
-            {/* Блок первого этапа */}
             <div className="bg-white md:rounded-xl rounded-[0] md:p-8 p-4 shadow-sm border border-stone-200">
               <div className="flex items-center mb-4 md:mb-6">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-stone-800 rounded-full flex items-center justify-center mr-3 md:mr-4">
@@ -168,7 +167,6 @@ return (
               </p>
             </div>
 
-            {/* Блок преимуществ */}
             <div className="bg-stone-800 md:rounded-xl rounded-[0] md:p-8 p-4 text-amber-50">
               <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-amber-100">
                 {getText('advantages_title', 'Наши преимущества')}
@@ -184,8 +182,6 @@ return (
                 ))}
               </div>
             </div>
-
-            {/* Блок документации */}
             <div className="bg-white md:rounded-xl rounded-[0] md:p-8 p-4 shadow-sm border border-stone-200">
               <h3 className="text-xl md:text-2xl font-bold text-stone-800 mb-4 md:mb-6 flex items-center">
                 <div className="w-2 h-6 md:w-3 md:h-8 bg-amber-600 mr-3 md:mr-4 rounded-full"></div>
@@ -206,8 +202,6 @@ return (
               </div>
             </div>
           </motion.div>
-
-          {/* Правая колонка - Стоимость работ */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -246,8 +240,6 @@ return (
                 ))}
               </div>
             </div>
-
-            {/* Блок расчета стоимости */}
             <div className="bg-gradient-to-br from-stone-700 to-stone-800 md:rounded-xl rounded-[0] md:p-8 p-4 text-amber-50">
               <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-amber-100">
                 {getText('individual_calc_title', 'Индивидуальный расчёт')}
@@ -274,8 +266,6 @@ return (
                 </button>
               </div>
             </div>
-
-            {/* Блок гарантий */}
             <div className="bg-white md:rounded-xl rounded-[0] md:p-6 p-4 shadow-sm border border-stone-200">
               <div className="flex items-center justify-around text-center">
                 {guarantees.map((guarantee, index) => (

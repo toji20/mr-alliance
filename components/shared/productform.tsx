@@ -57,7 +57,6 @@ export const ProductForm:React.FC<Props> = ({
         try {
           setSubmitting(true)
           
-          // Фильтруем пустые особенности
           const filteredFeatures = data.features.filter(feature => feature.trim() !== '')
           
           const productData = {
@@ -71,9 +70,7 @@ export const ProductForm:React.FC<Props> = ({
             toast.success('карточка успешно создана', {
               icon: '✅',
             })
-            // Полный сброс формы
             reset()
-            // Сбрасываем features к одному пустому полю
             remove()
             append('')
             router.refresh()
@@ -96,7 +93,6 @@ export const ProductForm:React.FC<Props> = ({
     <FormProvider {...formMethods}>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 pb-[30px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Название карточкаа */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Название карточки *
@@ -112,7 +108,6 @@ export const ProductForm:React.FC<Props> = ({
             )}
           </div>
 
-          {/* Цена */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Цена *
@@ -129,7 +124,6 @@ export const ProductForm:React.FC<Props> = ({
             )}
           </div>
 
-          {/* Ссылка на изображение */}
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Ссылка на изображение *
@@ -145,7 +139,6 @@ export const ProductForm:React.FC<Props> = ({
             )}
           </div>
 
-          {/* Размер */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Размер *
@@ -161,7 +154,6 @@ export const ProductForm:React.FC<Props> = ({
             )}
           </div>
 
-          {/* Особенности */}
           <div className="md:col-span-2">
             <div className="flex items-center justify-between mb-2">
               <label className="block text-sm font-medium text-gray-700">
@@ -211,7 +203,6 @@ export const ProductForm:React.FC<Props> = ({
             </div>
           </div>
 
-          {/* Описание */}
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Описание *
@@ -228,7 +219,6 @@ export const ProductForm:React.FC<Props> = ({
           </div>
         </div>
 
-        {/* Кнопки формы */}
         <div className="flex gap-4 pt-4 border-t border-gray-200">
           <button
             type="submit"

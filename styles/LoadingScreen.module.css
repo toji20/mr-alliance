@@ -260,7 +260,7 @@
 /* Адаптивность */
 @media (max-width: 768px) {
   .logoContainer {
-    gap: 15px;
+    gap: 0px;
   }
   
   .letterM,

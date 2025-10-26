@@ -1,5 +1,4 @@
 export const designProjectTexts = [
-  // Заголовки и основной текст
   {
     key: 'design_project_title',
     content: 'ДИЗАЙН-ПРОЕКТ КВАРТИРЫ',
@@ -11,7 +10,6 @@ export const designProjectTexts = [
     category: 'hero'
   },
 
-  // Блок "Почему нужен дизайн-проект?"
   {
     key: 'why_design_title',
     content: 'Почему нужен дизайн-проект?',
@@ -53,7 +51,6 @@ export const designProjectTexts = [
     category: 'benefits'
   },
 
-  // Блок этапов работы
   {
     key: 'stages_title',
     content: 'Этапы работы',
@@ -120,7 +117,6 @@ export const designProjectTexts = [
     category: 'stages'
   },
 
-  // Блок "Что входит в дизайн-проект"
   {
     key: 'what_included_title',
     content: 'Что входит в дизайн-проект',
@@ -188,7 +184,6 @@ category: 'results'
     category: 'results'
   },
 
-  // Блок стоимости и сроков
   {
     key: 'pricing_title',
     content: 'Стоимость и сроки',
@@ -240,7 +235,6 @@ category: 'results'
     category: 'pricing'
   },
 
-  // Блок гарантий
   {
     key: 'guarantees_title',
     content: 'Наши гарантии',
@@ -287,7 +281,6 @@ category: 'results'
     category: 'guarantees'
   },
 
-  // CTA блок
   {
     key: 'cta_title',
     content: 'Готовы создать интерьер вашей мечты?',
@@ -310,9 +303,7 @@ category: 'results'
   }
 ]
 
-// prisma/seed-data/repair-article.ts
 export const repairArticleTexts = [
-  // Заголовки и основной текст
   {
     key: 'repair_article_title',
     content: 'С ЧЕГО НАЧИНАЕТСЯ РЕМОНТ',
@@ -324,7 +315,6 @@ export const repairArticleTexts = [
     category: 'hero'
   },
 
-  // Блок первого этапа
   {
     key: 'first_stage_title',
     content: 'Первый этап ремонта',
@@ -336,7 +326,6 @@ export const repairArticleTexts = [
     category: 'stages'
   },
 
-  // Блок преимуществ
   {
     key: 'advantages_title',
     content: 'Наши преимущества',
@@ -363,7 +352,6 @@ export const repairArticleTexts = [
     category: 'advantages'
   },
 
-  // Блок документации
   {
     key: 'documentation_title',
     content: 'Подготовка документации',
@@ -430,7 +418,6 @@ export const repairArticleTexts = [
     category: 'documentation'
   },
 
-  // Блок стоимости работ
   {
     key: 'pricing_title',
     content: 'КАК ФОРМИРУЕТСЯ СТОИМОСТЬ',
@@ -442,7 +429,6 @@ export const repairArticleTexts = [
     category: 'pricing'
   },
 
-  // Факторы стоимости
   {
     key: 'factor_1_title',
     content: 'Площадь и архитектура',
@@ -495,7 +481,6 @@ category: 'pricing_factors'
     category: 'pricing_factors'
   },
 
-  // Блок индивидуального расчета
   {
     key: 'individual_calc_title',
     content: 'Индивидуальный расчёт',
@@ -537,7 +522,6 @@ category: 'pricing_factors'
     category: 'calculation'
   },
 
-  // Блок гарантий
   {
     key: 'guarantee_1_value',
     content: '100%',
@@ -569,7 +553,6 @@ category: 'pricing_factors'
     category: 'guarantees'
   },
 
-  // CTA блок
   {
     key: 'cta_title',
     content: 'Готовы начать ремонт?',
@@ -592,9 +575,7 @@ category: 'pricing_factors'
   }
 ]
 
-// prisma/seed-data/construction-article.ts
 export const constructionArticleTexts = [
-  // Заголовки и основной текст
   {
     key: 'construction_title',
     content: 'СТРОИТЕЛЬСТВО ДОМОВ',
@@ -606,7 +587,6 @@ export const constructionArticleTexts = [
     category: 'hero'
   },
 
-  // Блок введения
   {
     key: 'intro_text_1',
     content: 'На современном рынке представлено множество компаний, предлагающих строительные услуги по низким ценам. Однако выбор подрядчика требует взвешенного подхода.',
@@ -618,7 +598,6 @@ export const constructionArticleTexts = [
     category: 'intro'
   },
 
-  // Блок принципов
   {
     key: 'principles_title',
     content: 'Наши принципы',
@@ -650,7 +629,6 @@ export const constructionArticleTexts = [
     category: 'principles'
   },
 
-  // Блок этапов строительства
   {
     key: 'construction_stages_title',
     content: 'Этапы строительства',
@@ -717,7 +695,6 @@ export const constructionArticleTexts = [
     category: 'stages'
   },
 
-  // Блок стандартов качества
   {
     key: 'standards_title',
     content: 'Стандарты качества',
@@ -780,7 +757,6 @@ category: 'standards'
     category: 'standards'
   },
 
-  // Блок дополнительных возможностей
   {
     key: 'additional_options_title',
     content: 'Дополнительные возможности',
@@ -821,8 +797,6 @@ category: 'standards'
     content: 'Индивидуальный проект',
     category: 'additional'
   },
-
-  // CTA блок
   {
     key: 'cta_title',
     content: 'Начните строительство вашего дома',
@@ -844,9 +818,7 @@ category: 'standards'
     category: 'cta'
   }
 ]
-// prisma/seed-data/house-interior-design.ts
 export const houseInteriorDesignTexts = [
-  // Заголовки и основной текст
   {
     key: 'house_interior_title',
     content: 'ДИЗАЙН ИНТЕРЬЕРА ДОМА',
@@ -857,8 +829,6 @@ export const houseInteriorDesignTexts = [
     content: 'Создаем гармоничные пространства, где архитектура и интерьер существуют в единой концепции',
     category: 'hero'
   },
-
-  // Блок стилей интерьера
   {
     key: 'styles_title',
     content: 'Стили интерьера для дома',
@@ -1014,8 +984,6 @@ export const houseInteriorDesignTexts = [
     content: 'Умеренный декор',
     category: 'styles'
   },
-
-  // Блок особенных решений
   {
     key: 'special_features_title',
     content: 'Особенные решения для дома',
@@ -1082,8 +1050,6 @@ category: 'special_features'
     content: 'Организация развлекательных пространств для всей семьи',
     category: 'special_features'
   },
-
-  // Блок процесса проектирования
   {
     key: 'process_title',
     content: 'Процесс проектирования',
@@ -1209,8 +1175,6 @@ category: 'special_features'
     content: 'Разработка декора',
     category: 'process'
   },
-
-// Блок особенностей дизайна домов
   {
     key: 'design_features_title',
     content: 'Особенности дизайна домов',
@@ -1261,8 +1225,6 @@ category: 'special_features'
     content: 'Каждый проект начинается с глубокого анализа архитектуры дома и образа жизни его жильцов',
     category: 'design_features'
   },
-
-  // Блок опыта работы
   {
     key: 'experience_title',
     content: 'Опыт работы с домами',
@@ -1308,8 +1270,6 @@ category: 'special_features'
     content: 'Поддержка проекта',
     category: 'experience'
   },
-
-  // CTA блок
   {
     key: 'cta_title',
     content: 'Создадим интерьер вашего дома вместе?',
@@ -1331,9 +1291,7 @@ category: 'special_features'
     category: 'cta'
   }
 ]
-// prisma/seed-data/design-article.ts
 export const designArticleTexts = [
-  // Заголовки и основной текст
   {
     key: 'design_article_title',
     content: 'ПРОЕКТИРОВАНИЕ ДОМОВ',
@@ -1345,7 +1303,6 @@ export const designArticleTexts = [
     category: 'hero'
   },
 
-  // Блок с цитатой
   {
     key: 'quote_text',
     content: 'Одним из ключевых преимуществ элитной загородной недвижимости является качественное проектирование. Грамотно разработанный проект — основа создания комфортабельного жилья с высокими стандартами проживания.',
@@ -1356,8 +1313,6 @@ export const designArticleTexts = [
     content: 'Основа комфортного проживания',
     category: 'intro'
   },
-
-  // Блок специализации
   {
     key: 'specialization_title',
     content: 'Строительство «под ключ»',
@@ -1378,8 +1333,6 @@ export const designArticleTexts = [
     content: 'Системы кондиционирования',
     category: 'specialization'
   },
-
-  // Блок индивидуального подхода
   {
     key: 'individual_approach_title',
     content: 'Индивидуальный подход',
@@ -1415,8 +1368,6 @@ export const designArticleTexts = [
     content: 'От первоначальной концепции до получения всех необходимых согласований. На каждом этапе проект может быть скорректирован в соответствии с вашими пожеланиями.',
     category: 'individual_approach'
   },
-
-  // Блок ключевых моментов
   {
     key: 'key_points_title',
     content: 'Ключевые моменты',
@@ -1457,8 +1408,6 @@ export const designArticleTexts = [
     content: 'Удобство выезда в город, доступность транспортных развязок, расстояние до магазинов',
     category: 'key_points'
   },
-
-  // Блок комплексных услуг
   {
     key: 'services_title',
     content: 'Комплексные услуги',
@@ -1500,8 +1449,6 @@ content: 'Схемы инженерных коммуникаций',
     content: 'Индивидуальное решение',
     category: 'services'
   },
-
-  // CTA блок
   {
     key: 'cta_title',
     content: 'Готовы создать дом вашей мечты?',
@@ -1523,10 +1470,7 @@ content: 'Схемы инженерных коммуникаций',
     category: 'cta'
   }
 ]
-// prisma/seed-data/contacts-page.ts
-// prisma/seed-data/contacts-page.ts
 export const contactsPageTexts = [
-  // Заголовки
   {
     key: 'contacts_title',
     content: 'КОНТАКТЫ',
@@ -1537,15 +1481,11 @@ export const contactsPageTexts = [
     content: 'Свяжитесь с нами любым удобным способом. Мы всегда готовы ответить на ваши вопросы и обсудить ваш проект.',
     category: 'hero'
   },
-
-  // Контактная информация - заголовки
   {
     key: 'contact_info_title',
     content: 'Контактная информация',
     category: 'contacts'
   },
-
-  // Телефоны
   {
     key: 'contact_phone_title',
     content: 'Телефон',
@@ -1566,8 +1506,6 @@ export const contactsPageTexts = [
     content: 'Ежедневно с 9:00 до 21:00',
     category: 'contacts'
   },
-
-  // Email
   {
     key: 'contact_email_title',
     content: 'Email',
@@ -1589,7 +1527,6 @@ export const contactsPageTexts = [
     category: 'contacts'
   },
 
-  // Адрес
   {
     key: 'contact_address_title',
     content: 'Адрес',
@@ -1610,8 +1547,6 @@ export const contactsPageTexts = [
     content: 'Пн-Пт с 10:00 до 19:00',
     category: 'contacts'
   },
-
-  // Мессенджеры
   {
     key: 'contact_messengers_title',
     content: 'Мессенджеры',
@@ -1637,8 +1572,6 @@ export const contactsPageTexts = [
     content: 'Круглосуточная поддержка',
     category: 'contacts'
   },
-
-  // Реквизиты компании
   {
     key: 'company_details_title',
     content: 'Реквизиты компании',
@@ -1684,8 +1617,6 @@ export const contactsPageTexts = [
     content: '40702810123456789012',
     category: 'company'
   },
-
-  // Социальные сети - заголовки
   {
     key: 'social_title',
     content: 'Мы в социальных сетях',
@@ -1696,8 +1627,6 @@ export const contactsPageTexts = [
     content: 'Подписывайтесь на наши обновления',
     category: 'social'
   },
-
-  // VK
   {
     key: 'social_vk_name',
     content: 'VK',
@@ -1713,8 +1642,6 @@ export const contactsPageTexts = [
     content: 'https://vk.com/mr-alliance',
     category: 'social'
   },
-
-  // Instagram
   {
     key: 'social_instagram_name',
     content: 'Instagram',
@@ -1730,8 +1657,6 @@ export const contactsPageTexts = [
     content: 'https://instagram.com/mr-alliance',
     category: 'social'
   },
-
-// YouTube
   {
     key: 'social_youtube_name',
     content: 'YouTube',
@@ -1748,7 +1673,6 @@ export const contactsPageTexts = [
     category: 'social'
   },
 
-  // Facebook
   {
     key: 'social_facebook_name',
     content: 'Facebook',
@@ -1765,7 +1689,6 @@ export const contactsPageTexts = [
     category: 'social'
   },
 
-  // Преимущества
   {
     key: 'advantages_title',
     content: 'Почему выбирают нас',
@@ -1811,8 +1734,6 @@ export const contactsPageTexts = [
     content: 'Строгий контроль на всех этапах',
     category: 'advantages'
   },
-
-  // Статистика
   {
     key: 'statistics_title',
     content: 'Наша статистика',
@@ -1858,8 +1779,6 @@ export const contactsPageTexts = [
     content: 'Поддержка клиентов',
     category: 'statistics'
   },
-
-  // CTA блок
   {
     key: 'cta_title',
     content: 'Готовы обсудить ваш проект?',

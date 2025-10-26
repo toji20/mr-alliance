@@ -32,10 +32,10 @@ export const NavBg: React.FC<React.PropsWithChildren<Props>> = ({ className, chi
             <a href="/construction" className='nav-bg__list-item-link'
             onMouseEnter={() => changeBg('/main-bg-2.png')}
             onMouseLeave={returnBg}><li className='nav-bg__list-item'>СТРОИТЕЛЬСТВО ДОМОВ</li></a>
-            <a href="/apartament-design" className='nav-bg__list-item-link'
+            <a href="/apartment-design" className='nav-bg__list-item-link'
             onMouseEnter={() => changeBg('/main-bg-3.png')}
             onMouseLeave={returnBg}><li className='nav-bg__list-item'>ДИЗАЙН ИНТЕРЬЕРА КВАРТИР</li></a>
-            <a href="/apartament-renovation" className='nav-bg__list-item-link'
+            <a href="/apartment-renovation" className='nav-bg__list-item-link'
             onMouseEnter={() => changeBg('/main-bg-4.png')}
             onMouseLeave={returnBg}><li className='nav-bg__list-item'>РЕМОНТ</li></a>
             <a href="/portfolio" className='nav-bg__list-item-link'

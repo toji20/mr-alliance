@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { PrismaClient } from '@prisma/client'
 import { prisma } from '@/prisma/prisma-client'
 
-// Обновить текст
 export async function PUT(
   request: NextRequest, {params}: {params: Promise<{ id: string }>}
 ) {
@@ -19,7 +18,6 @@ export async function PUT(
   }
 }
 
-// Удалить текст
 export async function DELETE(
   request: Request, {params}: {params: Promise<{ id: string }>}
 ) {

@@ -64,8 +64,6 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
             />
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
           </div>
-
-          {/* Информация */}
           <div className="space-y-3">
             <h3 className="text-xl font-semibold text-stone-800">{name}</h3>
             
@@ -78,8 +76,6 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
                 {formatPrice(price)} ₽
               </div>
             </div>
-
-            {/* Особенности */}
             {featuresArray.length > 0 && (
               <div className="flex flex-wrap gap-1 pt-2">
                 {featuresArray.map((feature: string, index: number) => (
@@ -98,7 +94,6 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
               </div>
             )}
 
-            {/* Кнопка */}
             <button 
               onClick={openModal}
               className="w-full mt-4 bg-stone-800 text-amber-50 py-3 rounded-lg font-semibold hover:bg-stone-700 transition-colors duration-200 border border-stone-700"
@@ -124,7 +119,6 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
             className="bg-white md:rounded-2xl rounded-[0] w-full max-w-4xl max-h-[100%] md:max-h-[90vh] overflow-y-auto mx-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Хедер модалки */}
             <div className="sticky top-0 bg-white border-b border-stone-200 px-4 py-3 md:px-8 md:py-4 flex items-center justify-between z-10">
               <h2 className="text-lg md:text-2xl font-bold text-stone-800 truncate pr-4">
                 {name}
@@ -139,7 +133,6 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
 
             <div className="p-4 md:p-8">
               <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-8">
-                {/* Левая колонка - изображение и описание */}
                 <div className="space-y-4 md:space-y-6">
                   <div className="rounded-xl overflow-hidden bg-stone-100 aspect-video">
                     <img 
@@ -148,9 +141,7 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  
-                  {/* Описание для мобильной версии */}
-                  <div className="block md:hidden">
+                                    <div className="block md:hidden">
                     <h3 className="text-lg font-semibold text-stone-800 mb-3">Описание</h3>
                     <p className="text-stone-600 text-sm leading-relaxed">
                       {descr}
@@ -158,9 +149,7 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
                   </div>
                 </div>
 
-                {/* Правая колонка - информация и кнопки */}
                 <div className="space-y-4 md:space-y-6">
-                  {/* Блок с ценой и площадью */}
                   <div className="bg-amber-50 rounded-xl p-4 md:p-6 border border-amber-100">
                     <div className="flex items-center justify-between mb-3 md:mb-4">
                       <div className="text-xl md:text-2xl font-bold text-amber-600">
@@ -174,8 +163,6 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
                       {Math.round(price / size).toLocaleString()} ₽ за м²
                     </div>
                   </div>
-
-                  {/* Особенности дома */}
                   <div>
                     <h3 className="text-base md:text-lg font-semibold text-stone-800 mb-3">Особенности дома</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3">
@@ -187,8 +174,6 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
                       ))}
                     </div>
                   </div>
-
-                  {/* Дополнительная информация (только для десктопа) */}
                   {descr && (
                     <div className="hidden md:block space-y-3">
                       <h3 className="text-lg font-semibold text-stone-800">Дополнительная информация</h3>
@@ -202,8 +187,6 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
                 </div>
               </div>
             </div>
-
-            {/* Футер для мобильной версии */}
             <div className="sticky bottom-0 bg-white border-t border-stone-200 p-4">
               <div className="flex">
               <Link href="/contacts" className='flex w-full'>

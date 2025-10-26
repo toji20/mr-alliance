@@ -97,14 +97,12 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
 
   return (
     <div className="space-y-8">
-      {/* Форма добавления новой фотографии */}
       <div className="bg-white p-6 rounded-lg shadow-sm border">
         <h3 className="text-xl font-semibold mb-6 text-gray-900">Добавить новую фотографию в галерею</h3>
         
         <FormProvider {...formMethods}>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Название фотографии */}
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Название фотографии *
@@ -120,7 +118,6 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
                 )}
               </div>
 
-              {/* Ссылка на изображение */}
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Ссылка на изображение *
@@ -136,7 +133,6 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
                 )}
               </div>
 
-              {/* Описание */}
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Описание *
@@ -153,7 +149,6 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
               </div>
             </div>
 
-            {/* Кнопки формы */}
             <div className="flex gap-4 pt-4 border-t border-gray-200">
               <button
                 type="submit"
@@ -175,7 +170,6 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
         </FormProvider>
       </div>
 
-      {/* Список существующих фотографий для удаления */}
       <div className="bg-white p-6 rounded-lg shadow-sm border">
         <h3 className="text-xl font-semibold mb-6 text-gray-900">Управление фотографиями галереи</h3>
         
@@ -189,7 +183,6 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
             {galleryPhotos.map((photo) => (
               <div key={photo.id} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                 <div className="flex items-center space-x-4">
-                  {/* Превью изображения */}
                   <div className="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
                     <img 
                       src={photo.imageUrl} 
@@ -198,7 +191,6 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
                     />
                   </div>
                   
-                  {/* Информация о фотографии */}
                   <div className="flex-1 min-w-0">
                     <h4 className="font-medium text-gray-900 truncate">{photo.name}</h4>
                     <p className="text-sm text-gray-500 truncate">{photo.descr}</p>
@@ -208,7 +200,6 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
                   </div>
                 </div>
 
-                {/* Кнопка удаления */}
                 <button
                   onClick={() => handleDelete(photo.id)}
                   disabled={deletingId === photo.id}
@@ -226,7 +217,6 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
           </div>
         )}
 
-        {/* Статистика */}
         <div className="mt-6 flex flex-wrap gap-6 text-sm text-gray-600 bg-gray-50 p-4 rounded-lg">
           <span className="flex items-center gap-2">
             <span className="w-2 h-2 bg-blue-500 rounded-full"></span>

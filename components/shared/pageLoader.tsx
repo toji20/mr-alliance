@@ -9,7 +9,6 @@ const LoadingScreen = () => {
   const [rProgress, setRProgress] = useState(0);
 
   useEffect(() => {
-    // Симуляция прогресса загрузки
     const progressInterval = setInterval(() => {
       setProgress(prev => {
         const newProgress = prev + Math.random() * 15;
@@ -31,7 +30,6 @@ const LoadingScreen = () => {
     };
   }, []);
 
-  // Обновляем прогресс для букв
   useEffect(() => {
     setMProgress(Math.min(progress, 50) * 2);
     setRProgress(Math.max(0, (progress - 50) * 2));
@@ -44,7 +42,6 @@ const LoadingScreen = () => {
       <div className={styles.background}></div>
       
       <div className={styles.logoContainer}>
-        {/* Буква M с анимацией появления */}
         <div className={styles.letterWrapper}>
           <div 
             className={`${styles.letterM} ${mProgress >= 100 ? styles.complete : ''}`}
@@ -54,7 +51,6 @@ const LoadingScreen = () => {
           </div>
         </div>
 
-        {/* Буква R с анимацией появления */}
         <div className={styles.letterWrapper}>
           <div 
             className={`${styles.letterR} ${rProgress >= 100 ? styles.complete : ''}`}
@@ -65,14 +61,12 @@ const LoadingScreen = () => {
         </div>
       </div>
 
-      {/* Надпись MR | ALLIANCE */}
       <div className={styles.companyName}>
         <span className={styles.mrPart}>MR</span>
         <span className={styles.separator}> | </span>
         <span className={styles.alliancePart}>ALLIANCE</span>
       </div>
 
-      {/* Прогресс бар */}
       <div className={styles.progressContainer}>
         <div className={styles.progressBar}>
           <div 

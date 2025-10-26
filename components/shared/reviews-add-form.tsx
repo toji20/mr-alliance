@@ -81,7 +81,6 @@ export const ReviewForm: React.FC = () => {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="md:space-y-6 space-y-4">
-        {/* Рейтинг */}
         <div>
           <label className="block text-sm font-medium text-stone-700 mb-3">
             Ваша оценка *
@@ -118,7 +117,6 @@ export const ReviewForm: React.FC = () => {
           )}
         </div>
 
-        {/* Текст отзыва */}
         <div>
           <label className="block text-sm font-medium text-stone-700 mb-2">
             Текст отзыва *
@@ -143,7 +141,6 @@ export const ReviewForm: React.FC = () => {
           )}
         </div>
 
-        {/* Информация о данных */}
         <div className="bg-amber-50 rounded-lg p-3 md:p-4 border border-amber-200 md:block hidden">
           <div className="flex items-start space-x-3">
             <div className="w-2 h-2 bg-amber-500 rounded-full mt-1.5 md:mt-2 flex-shrink-0"></div>
@@ -154,7 +151,6 @@ export const ReviewForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Кнопки */}
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
           <button
             type="submit"

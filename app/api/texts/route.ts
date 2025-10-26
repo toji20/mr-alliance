@@ -4,7 +4,6 @@ import { prisma } from '@/prisma/prisma-client';
 
 export const dynamic = 'force-dynamic';
 
-// GET все тексты
 export async function GET() {
   try {
     const texts = await prisma.textContent.findMany()
@@ -14,4 +13,3 @@ export async function GET() {
   }
 }
 
-// Создать новый текст

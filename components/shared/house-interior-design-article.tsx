@@ -235,7 +235,6 @@ const experienceStats = [
     <div className="min-h-screen bg-stone-50 md:py-16 py-8 md:px-6 px-[0] md:pl-[20%] pl-[0]">
       <div className="max-w-7xl mx-auto">
         
-        {/* Заголовок */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

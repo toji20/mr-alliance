@@ -16,9 +16,7 @@ export const Catalog: React.FC<React.PropsWithChildren<Props>> = ({ className, c
   return (
     <div className={cn('min-h-screen bg-stone-50 md:py-16 py-10 px-6 md:pl-[20%] pl-6', className)}>
       <div className="max-w-7xl mx-auto">
-        
-        {/* Заголовок */}
-        <div className="text-center md:mb-16 mb-7">
+                <div className="text-center md:mb-16 mb-7">
           <h1 className="text-[24px] md:text-5xl font-light text-stone-800 mb-4">
             КАТАЛОГ <span className="font-semibold">ДОМОВ</span>
           </h1>
@@ -29,7 +27,6 @@ export const Catalog: React.FC<React.PropsWithChildren<Props>> = ({ className, c
         </div>
 
         <div className="grid gap-8">
-          {/* Сетка домов */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {items?.map((item, id) => (
               <CatalogCard

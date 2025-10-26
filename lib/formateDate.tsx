@@ -1,4 +1,3 @@
-// lib/utils.ts
 export function formatDateToNumeric(date: string | Date): string {
     const dateObj = typeof date === 'string' ? new Date(date) : date;
     

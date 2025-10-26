@@ -50,7 +50,6 @@ export default function ContactsPage() {
     )
   }
 
-  // Данные для блоков (как в предыдущих страницах)
   const contactInfo = [
     {
       icon: '📞',
@@ -174,7 +173,6 @@ const advantages = [
   return (
     <div className="min-h-screen bg-stone-50 md:py-16 py-8 pt-28 md:px-4 px-[0] lg:pl-[18%] pl-[0] overflow-auto">
       <div className="max-w-6xl mx-auto">
-        {/* Заголовок */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -192,14 +190,12 @@ const advantages = [
 
         <div className="grid lg:grid-cols-2 gap-6 md:gap-12 md:mb-16 mb-8">
           
-          {/* Левая колонка - Основная контактная информация */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6 md:space-y-8"
           >
-            {/* Контактные данные */}
             <div className="bg-white md:rounded-2xl rounded-[0] md:p-8 p-4 shadow-lg border border-stone-200">
               <h2 className="text-xl md:text-2xl font-bold text-stone-800 md:mb-8 mb-6 flex items-center">
                 <div className="w-8 h-8 md:w-10 md:h-10 bg-[#ffe6b6] rounded-xl flex items-center justify-center mr-3 md:mr-4">
@@ -232,7 +228,6 @@ const advantages = [
               </div>
             </div>
 
-{/* Реквизиты компании */}
             <div className="bg-stone-800 md:rounded-2xl rounded-[0] md:p-8 p-4 text-amber-50">
               <h3 className="text-xl md:text-2xl font-bold md:mb-6 mb-4 text-amber-100">
                 {getText('company_details_title', 'Реквизиты компании')}
@@ -248,14 +243,12 @@ const advantages = [
             </div>
           </motion.div>
 
-          {/* Правая колонка - Дополнительная информация */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-6 md:space-y-8"
           >
-            {/* Социальные сети */}
             <div className="bg-white md:rounded-2xl rounded-[0] md:p-8 p-4 shadow-lg border border-stone-200">
               <h2 className="text-xl md:text-2xl font-bold text-stone-800 md:mb-6 mb-4 flex items-center">
                 <div className="w-8 h-8 md:w-10 md:h-10 bg-[#ffe6b6] rounded-xl flex items-center justify-center mr-3 md:mr-4">
@@ -286,7 +279,6 @@ const advantages = [
               </div>
             </div>
 
-            {/* Блок преимуществ */}
             <div className="bg-gradient-to-br from-stone-700 to-stone-800 md:rounded-2xl rounded-[0] md:p-8 p-4 text-amber-50">
               <h3 className="text-xl md:text-2xl font-bold md:mb-6 mb-4 text-amber-100">
                 {getText('advantages_title', 'Почему выбирают нас')}
@@ -307,7 +299,6 @@ const advantages = [
               </div>
             </div>
 
-            {/* Мини-статистика */}
             <div className="bg-white md:rounded-2xl rounded-[0] md:p-6 p-4 shadow-lg border border-stone-200">
               <h3 className="text-base md:text-lg font-bold text-stone-800 md:mb-4 mb-3 text-center">
                 {getText('statistics_title', 'Наша статистика')}
@@ -324,7 +315,6 @@ const advantages = [
           </motion.div>
         </div>
 
-        {/* Футер CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

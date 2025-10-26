@@ -51,7 +51,6 @@ export const AdminCatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
           </div>
 
-          {/* Информация */}
           <div className="space-y-3">
             <h3 className="text-xl font-semibold text-stone-800">{name}</h3>
             
@@ -65,7 +64,6 @@ export const AdminCatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
               </div>
             </div>
 
-            {/* Особенности */}
             {features.length > 0 && (
               <div className="flex flex-wrap gap-1 pt-2">
                 {features.map((feature: string, index: number) => (
@@ -83,8 +81,6 @@ export const AdminCatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
                 )}
               </div>
             )}
-
-            {/* Кнопка */}
             <button className='flex-1 bg-[#cf3d30] text-[white] font-semibold py-3 px-6 rounded-lg hover:bg-amber-400 transition-colors'onClick={() => onClickRemove?.()}>Удалить товар</button>
           </div>
         </div>

@@ -14,7 +14,6 @@ export const Header: React.FC<React.PropsWithChildren<Props>> = ({ className, ch
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     
-    // Определяем мобильное устройство
     useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 768);

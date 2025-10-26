@@ -213,7 +213,6 @@ icon: "📊",
     <div className="min-h-screen bg-stone-50 md:py-16 py-8 md:px-6 px-[0] md:pl-[20%] pl-[0]">
       <div className="max-w-7xl mx-auto">
         
-        {/* Заголовок */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -230,15 +229,12 @@ icon: "📊",
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 md:mb-16 mb-8">
-
-          {/* Левая колонка - Основная информация */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6 md:space-y-8"
           >
-            {/* Блок преимуществ */}
             <div className="bg-white md:rounded-2xl rounded-[0] md:p-8 p-4 shadow-lg border border-stone-200">
               <div className="flex items-center mb-4 md:mb-6">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-[#ffe6b6] rounded-xl flex items-center justify-center mr-3 md:mr-4">
@@ -268,8 +264,6 @@ icon: "📊",
                 ))}
               </div>
             </div>
-
-            {/* Блок этапов */}
             <div className="bg-stone-800 md:rounded-2xl rounded-[0] md:p-8 p-4 text-amber-50">
               <h3 className="text-xl md:text-2xl font-light mb-4 md:mb-6 text-amber-100">
                 {getText('stages_title', 'Этапы работы')}
@@ -313,7 +307,6 @@ icon: "📊",
             </div>
           </motion.div>
 
-          {/* Правая колонка */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -321,7 +314,6 @@ icon: "📊",
             className="space-y-6 md:space-y-8"
           >
             
-            {/* Блок что вы получаете */}
             <div className="bg-white md:rounded-2xl rounded-[0] md:p-8 p-4 shadow-lg border border-stone-200">
               <h2 className="text-xl md:text-2xl font-bold text-stone-800 mb-4 md:mb-6 flex items-center">
                 <div className="w-8 h-8 md:w-10 md:h-10 bg-[#ffe6b6] rounded-xl flex items-center justify-center mr-3 md:mr-4">
@@ -349,7 +341,6 @@ icon: "📊",
               </div>
             </div>
 
-            {/* Блок стоимости и сроков */}
             <div className="bg-gradient-to-br from-stone-700 to-stone-800 md:rounded-2xl rounded-[0] md:p-8 p-4 text-amber-50">
               <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-amber-100">
                 {getText('pricing_title', 'Стоимость и сроки')}
@@ -370,8 +361,6 @@ icon: "📊",
                 </p>
               </div>
             </div>
-
-{/* Блок гарантий */}
             <div className="bg-white md:rounded-2xl rounded-[0] md:p-6 p-4 shadow-lg border border-stone-200">
               <h3 className="text-base md:text-lg font-bold text-stone-800 mb-3 md:mb-4 text-center">
                 {getText('guarantees_title', 'Наши гарантии')}
@@ -392,7 +381,6 @@ icon: "📊",
           </motion.div>
         </div>
 
-        {/* CTA блок */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

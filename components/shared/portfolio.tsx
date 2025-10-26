@@ -80,7 +80,6 @@ export const GalleryPage: React.FC<React.PropsWithChildren<Props>> = ({ items })
     <div className="min-h-screen bg-stone-50 md:py-16 py-8 px-4 md:pl-[20%] pl-6" id='Фотогалерея'>
       <div className="max-w-7xl mx-auto">
         
-        {/* Заголовок */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -95,8 +94,6 @@ export const GalleryPage: React.FC<React.PropsWithChildren<Props>> = ({ items })
             {getText('gallery_subtitle', 'Лучшие реализованные проекты домов и коттеджей')}
           </p>
         </motion.div>
-
-        {/* Основная галерея */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -129,8 +126,6 @@ export const GalleryPage: React.FC<React.PropsWithChildren<Props>> = ({ items })
           />
           ))}
         </motion.div>
-
-        {/* CTA блок */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

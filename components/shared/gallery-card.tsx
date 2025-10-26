@@ -73,7 +73,6 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
             className="fixed inset-0 bg-stone-900 bg-opacity-95 flex items-center justify-center z-50 md:p-4 p-[0]"
             onClick={onCloseModal}
           >
-            {/* Мобильный хедер с крестиком и счетчиком */}
             <div className="md:hidden absolute top-4 left-4 right-4 flex items-center justify-between z-10">
               <div className="bg-stone-800 bg-opacity-50 text-amber-50 px-3 py-1.5 rounded-full text-sm">
                 {currentIndex + 1} / {galleryImages.length}
@@ -85,16 +84,12 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
                 <X size={16}/>
               </button>
             </div>
-
-            {/* Десктопный крестик */}
             <button 
               className="hidden md:flex cursor-pointer absolute top-6 right-6 z-10 w-10 h-10 bg-stone-800 rounded-full items-center justify-center text-amber-50 hover:bg-stone-700 transition-colors"
               onClick={onCloseModal}
             >
               <X size={20}/>
             </button>
-
-            {/* Десктопный счетчик */}
             <div className="hidden md:flex absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 bg-stone-800 bg-opacity-50 text-amber-50 px-4 py-2 rounded-full text-sm">
               {currentIndex + 1} / {galleryImages.length}
             </div>

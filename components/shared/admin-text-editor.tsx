@@ -38,7 +38,6 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
     loadTexts()
   }, [])
 
-  // Фильтрация текстов
   useEffect(() => {
     let filtered = texts
 
@@ -56,7 +55,6 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
     setFilteredTexts(filtered)
   }, [searchTerm, selectedCategory, texts])
 
-  // Обновление текста
   const updateText = async (id: string) => {
     try {
       await fetch(`/api/texts/${id}`, {
@@ -75,7 +73,6 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
     }
   }
 
-  // Удаление текста
   const deleteText = async (id: string) => {
     if (!confirm('Вы уверены, что хотите удалить этот текст?')) return
     
@@ -89,19 +86,16 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
     }
   }
 
-  // Начало редактирования
   const startEdit = (text: TextContent) => {
     setEditingId(text.id)
     setEditContent(text.content)
   }
 
-  // Отмена редактирования
   const cancelEdit = () => {
     setEditingId(null)
     setEditContent('')
   }
 
-  // Получение уникальных категорий
   const categories = [...new Set(texts.map(text => text.category || 'без категории'))].sort()
 
   return ( 
@@ -110,7 +104,6 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl font-bold text-gray-900 mb-8">Панель администратора</h1>
           
-          {/* Навигация по табам */}
           <div className="mb-8 bg-white rounded-lg shadow-sm border">
             <nav className="flex">
               <button
@@ -148,12 +141,10 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
 
           {activeTab === 'texts' ? (
             <>
-              {/* Панель поиска и фильтров */}
               <div className="mb-8 p-6 border rounded-lg bg-white shadow-sm">
                 <h2 className="text-xl font-semibold mb-4 text-gray-900">Поиск и фильтрация текстов</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Поиск по ключу и содержанию */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Поиск по ключу или содержанию
@@ -167,7 +158,6 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
                     />
                   </div>
 
-                  {/* Фильтр по категориям */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Фильтр по категориям
@@ -187,7 +177,6 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
                   </div>
                 </div>
 
-                {/* Статистика */}
                 <div className="mt-6 flex flex-wrap gap-6 text-sm text-gray-600 bg-gray-50 p-4 rounded-lg">
                   <span className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
@@ -206,7 +195,6 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
                 </div>
               </div>
 
-              {/* Список текстов */}
               <div className="space-y-4">
                 {filteredTexts.length === 0 ? (
                   <div className="text-center py-12 text-gray-500 bg-white rounded-lg border">
@@ -289,7 +277,6 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
                 )}
               </div>
 
-              {/* Быстрые действия */}
               <div className="mt-8 p-6 border rounded-lg bg-white">
                 <h3 className="text-lg font-semibold mb-4 text-gray-900">Быстрые действия</h3>
 
@@ -313,13 +300,11 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
               </div>
             </>
           ) : activeTab === 'products' ? (
-            /* Управление домами */
             <div className="bg-white p-8 rounded-lg shadow-sm border">
               <h2 className="text-2xl font-semibold mb-8 text-gray-900">Добавление карточек домов</h2>
               <ProductForm />
             </div>
           ) : (
-            /* Управление галереей фотографий */
             <div className="bg-white p-8 rounded-lg shadow-sm border">
               <h2 className="text-2xl font-semibold mb-8 text-gray-900">Управление галереей фотографий</h2>
               <GalleryPhotoForm galleryPhotos={galleryPhotos} />

@@ -133,11 +133,8 @@ export default function ConstructionArticle() {
 
         <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-start">
           
-          {/* Левая часть - основной контент */}
           <div className="lg:w-7/12 space-y-6 md:space-y-10">
-            
-            {/* Блок введения */}
-            <motion.div
+                        <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -155,8 +152,6 @@ export default function ConstructionArticle() {
                 </div>
               </div>
             </motion.div>
-
-            {/* Блок преимуществ */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -187,8 +182,6 @@ export default function ConstructionArticle() {
                 ))}
               </div>
             </motion.div>
-
-            {/* Блок этапов строительства */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -213,12 +206,8 @@ export default function ConstructionArticle() {
               </div>
             </motion.div>
           </div>
-
-          {/* Правая часть - акценты */}
           <div className="lg:w-5/12 space-y-4 md:space-y-6">
-            
-            {/* Блок стандартов качества */}
-            <motion.div
+                        <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -255,8 +244,6 @@ export default function ConstructionArticle() {
                   ))}
                 </div>
               </div>
-
-              {/* Блок дополнительных возможностей */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -292,8 +279,6 @@ export default function ConstructionArticle() {
             </motion.div>
           </div>
         </div>
-
-        {/* Футер CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

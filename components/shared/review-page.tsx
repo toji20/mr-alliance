@@ -21,7 +21,6 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
     setIsClient(true);
   }, []);
 
-  // Фильтрация и сортировка отзывов
   const filteredReviews = items
     .filter(review => {
       const matchesSearch = review.text.toLowerCase().includes(searchTerm.toLowerCase())
@@ -52,7 +51,6 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
   return (
     <div className="min-h-screen bg-stone-50 md:py-8 py-4 pt-30 md:pl-[18%] pl-[0]">
       <div className="max-w-7xl mx-auto px-[0] sm:px-6 lg:px-8">
-        {/* Заголовок страницы */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,7 +65,6 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
             Читайте реальные отзывы о сотрудничестве.
           </p>
           
-          {/* Общий рейтинг */}
           <div className="mt-6 inline-flex items-center space-x-4 bg-white px-6 py-3 md:rounded-2xl rounded-[0] shadow-sm border border-stone-200">
             <div className="text-center">
               <div className="text-3xl font-bold text-stone-800">{averageRating.toFixed(1)}</div>
@@ -89,7 +86,6 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
           </div>
         </motion.div>
 
-        {/* Панель фильтров и поиска */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -97,7 +93,6 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
           className="bg-white md:rounded-2xl rounded-[0] shadow-sm border border-stone-200 md:p-6 p-4 mb-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Поиск */}
             <div className="relative">
               <label className="block text-sm font-medium text-stone-700 mb-2">
                 Поиск по отзывам
@@ -112,7 +107,6 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
               />
             </div>
 
-            {/* Фильтр по рейтингу */}
             <div>
               <label className="block text-sm font-medium text-stone-700 mb-2">
                 <Filter className="w-4 h-4 inline mr-1" />
@@ -132,7 +126,6 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
               </select>
             </div>
 
-            {/* Сортировка */}
             <div>
               <label className="block text-sm font-medium text-stone-700 mb-2">
                 Сортировка
@@ -148,7 +141,6 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
             </div>
           </div>
 
-          {/* Быстрые фильтры по рейтингу */}
           <div className="flex flex-wrap gap-2 mt-4">
             <button
               onClick={() => setRatingFilter(null)}
@@ -176,14 +168,12 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
           </div>
         </motion.div>
 
-        {/* Сетка отзывов с горизонтальным скроллом на мобильных */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="mb-8 md:mb-12"
         >
-          {/* Десктопная версия - обычная сетка */}
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[500px] overflow-auto py-[20px] px-[10px] border-[3px] border-t-[#ebb842] border-b-[#ebb842]">
             {filteredReviews.map((review, index) => (
               <motion.div
@@ -201,9 +191,8 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
             ))}
           </div>
 
-          {/* Мобильная версия - горизонтальный скролл */}
           <div className="md:hidden">
-            <div className="flex overflow-x-auto pb-4 -mx-4 px-4 space-x-4 scrollbar-hide">
+            <div className="flex overflow-x-auto pb-4 pl-4 space-x-4 scrollbar-hide">
               {filteredReviews.map((review, index) => (
                 <motion.div
                   key={review.id}
@@ -223,7 +212,6 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
           </div>
         </motion.div>
 
-        {/* Сообщение если нет отзывов */}
         {filteredReviews.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -240,10 +228,8 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
           </motion.div>
         )}
 
-        {/* Форма добавления отзыва */}
         <ReviewForm/>
         
-        {/* Призыв к действию */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

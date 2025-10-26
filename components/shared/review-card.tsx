@@ -42,7 +42,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
         className
       )}
     >
-      {/* Иконка цитаты */}
       <div className="flex justify-between items-start mb-4">
         <div className="flex space-x-1">
           {renderStars(rating)}
@@ -52,20 +51,14 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
           className="text-amber-200 group-hover:text-amber-300 transition-colors" 
         />
       </div>
-
-      {/* Текст отзыва */}
       <div className="mb-6 overflow-hidden">
         <p className="text-stone-700 leading-relaxed text-lg">
           "{text}"
         </p>
       </div>
-
-      {/* Нижняя часть с датой и рейтингом */}
       <div className="flex justify-between items-center pt-4 border-t border-stone-100">
         <span className="text-stone-500 font-medium">{formatDateToNumeric(date)}</span>
-        
-        {/* Индикатор проверенного отзыва */}
-        <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2">
           <span className="text-sm font-semibold text-amber-600">
             {rating}.0/5.0
           </span>
