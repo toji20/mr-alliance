@@ -23,7 +23,7 @@ export const Bg: React.FC<React.PropsWithChildren<Props>> = ({
     
     return (
         <div 
-              className={cn('apartment-renovation__container w-[100%] md:h-screen h-[95vh] overflow-hidden relative')}
+              className={cn('apartment-renovation__container w-[100%] md:h-screen h-[98vh] overflow-hidden relative')}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >

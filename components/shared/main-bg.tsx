@@ -65,7 +65,7 @@ export const MainBg: React.FC<React.PropsWithChildren<Props>> = ({ className, ch
   };
 
   return (
-    <div className={cn('w-[100%] md:h-screen h-[95vh] overflow-hidden relative', className)}>
+    <div className={cn('w-[100%] md:h-screen h-[98vh] overflow-hidden relative', className)}>
       <div 
         className="flex h-full transition-transform duration-600 ease-in-out"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
