@@ -1894,7 +1894,7 @@ export const headerText = [
   },
   {
     key: 'header_nav_2_item',
-    content: 'ПАРТФОЛИО',
+    content: 'ПОРТФОЛИО',
     category: 'nav'
   },
   {

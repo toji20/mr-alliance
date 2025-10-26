@@ -308,12 +308,16 @@ export default function ConstructionArticle() {
               {getText('cta_description', 'Поэтапное выполнение работ от проектирования до внутренней отделки гарантирует строительство качественного и комфортабельного жилья.')}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button className="bg-stone-800 text-amber-50 font-medium py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-stone-700 transition-colors text-sm">
+              <a href="/contacts" className='w-full'>
+              <button className="w-full bg-stone-800 text-amber-50 font-medium py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-stone-700 transition-colors text-sm">
                 {getText('cta_button_primary', 'Получить консультацию')}
               </button>
-              <button className="border border-stone-800 text-stone-800 font-medium py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-stone-800 hover:text-amber-50 transition-colors text-sm">
+              </a>
+              <a href="/catalog" className='w-full'>
+              <button className="w-full border border-stone-800 text-stone-800 font-medium py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-stone-800 hover:text-amber-50 transition-colors text-sm">
                 {getText('cta_button_secondary', 'Смотреть проекты')}
               </button>
+              </a>
             </div>
           </div>
         </motion.div>

@@ -144,9 +144,10 @@ export const GalleryPage: React.FC<React.PropsWithChildren<Props>> = ({ items })
             <p className="text-stone-600 text-base mb-6">
               {getText('cta_description', 'Давайте создадим ваш идеальный дом вместе')}
             </p>
+            <a href="/contacts">
             <button className="bg-stone-800 text-amber-50 font-medium py-3 px-8 rounded-lg hover:bg-stone-700 transition-colors">
               {getText('cta_button', 'Обсудить проект')}
-            </button>
+            </button></a>
           </div>
         </motion.div>
       </div>

@@ -39,7 +39,7 @@ export const Header: React.FC<React.PropsWithChildren<Props>> = ({ className, ch
 
     const navItems = [
         { name: 'КАТАЛОГ ПРОЕКТОВ', href: '/catalog' },
-        { name: 'ПАРТФОЛИО', href: '/portfolio' },
+        { name: 'ПОРТФОЛИО', href: '/portfolio' },
         { name: 'РЕМОНТ КВАРТИР', href: '/apartment-renovation' },
         { name: 'ДИЗАЙН-ПРОЕКТ КВАРТИРЫ', href: '/apartment-design' },
         { name: 'ДИЗАЙН ИНТЕРЬЕРА ДОМА', href: '/house-interior-design' },

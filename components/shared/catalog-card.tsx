@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ClosedCaption, Cross, X } from 'lucide-react';
 import { parseFeatures } from '@/lib/parseFeatures';
+import Link from 'next/link';
 
 interface Props {
   className?: string;
@@ -203,14 +204,13 @@ export const CatalogCard: React.FC<React.PropsWithChildren<Props>> = ({
             </div>
 
             {/* Футер для мобильной версии */}
-            <div className="sticky bottom-0 bg-white border-t border-stone-200 p-4 md:hidden">
-              <div className="flex flex-col gap-2">
-              <button className="flex-1 bg-[#ffe6b6] text-stone-900 font-semibold py-3 px-4 md:px-6 rounded-lg hover:bg-amber-400 transition-colors text-sm md:text-base">
-                      Забронировать просмотр
-                    </button>
-                    <button className="flex-1 border-2 border-stone-800 text-stone-800 font-semibold py-3 px-4 md:px-6 rounded-lg hover:bg-stone-800 hover:text-white transition-colors text-sm md:text-base">
-                      Получить расчет
-                    </button>
+            <div className="sticky bottom-0 bg-white border-t border-stone-200 p-4">
+              <div className="flex">
+              <Link href="/contacts" className='flex w-full'>
+              <button className="w-full bg-[#ffe6b6] text-stone-900 font-semibold py-3 px-4 md:px-6 rounded-lg hover:bg-amber-400 transition-colors text-sm md:text-base">
+                Забронировать просмотр
+              </button>
+              </Link>
               </div>
             </div>
           </motion.div>

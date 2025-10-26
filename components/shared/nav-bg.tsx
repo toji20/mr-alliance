@@ -27,24 +27,24 @@ export const NavBg: React.FC<React.PropsWithChildren<Props>> = ({ className, chi
      <h1 className='nav-bg__title'>ПРОЕКТИРОВАНИЕ И СТРОИТЕЛЬСТВО ДОМОВ</h1>
     <div>
         <ul>
-            <a href="" className='nav-bg__list-item-link' 
-            ><li className='nav-bg__list-item'>ПРОЕКТИРОВАНИЕ ДОМОВ</li></a>
-            <a href="" className='nav-bg__list-item-link'
+            <a href="/planning" className='nav-bg__list-item-link' 
+            ><li className='nav-bg__list-item'>ПРОЕКТИРОВАНИЕ</li></a>
+            <a href="/construction" className='nav-bg__list-item-link'
             onMouseEnter={() => changeBg('/main-bg-2.png')}
             onMouseLeave={returnBg}><li className='nav-bg__list-item'>СТРОИТЕЛЬСТВО ДОМОВ</li></a>
-            <a href="" className='nav-bg__list-item-link'
+            <a href="/apartament-design" className='nav-bg__list-item-link'
             onMouseEnter={() => changeBg('/main-bg-3.png')}
             onMouseLeave={returnBg}><li className='nav-bg__list-item'>ДИЗАЙН ИНТЕРЬЕРА КВАРТИР</li></a>
-            <a href="" className='nav-bg__list-item-link'
+            <a href="/apartament-renovation" className='nav-bg__list-item-link'
             onMouseEnter={() => changeBg('/main-bg-4.png')}
             onMouseLeave={returnBg}><li className='nav-bg__list-item'>РЕМОНТ</li></a>
-            <a href="" className='nav-bg__list-item-link'
+            <a href="/portfolio" className='nav-bg__list-item-link'
             onMouseEnter={() => changeBg('/main-bg-5.png')}
-            onMouseLeave={returnBg}><li className='nav-bg__list-item'>ПАРТФОЛИО</li></a>
-            <a href="" className='nav-bg__list-item-link'
+            onMouseLeave={returnBg}><li className='nav-bg__list-item'>ПОРТФОЛИО</li></a>
+            <a href="/catalog" className='nav-bg__list-item-link'
             onMouseEnter={() => changeBg('/main-bg-6.png')}
             onMouseLeave={returnBg}><li className='nav-bg__list-item'>ПРОЕКТЫ ДОМОВ</li></a>
-            <a href="" className='nav-bg__list-item-link'
+            <a href="/house-interior-design" className='nav-bg__list-item-link'
             onMouseEnter={() => changeBg('/main-bg-2.png')}
             onMouseLeave={returnBg}><li className='nav-bg__list-item'>ДИЗАЙН ИНТЕРЬЕРА ДОМОВ</li></a>
         </ul>

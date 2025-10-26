@@ -56,7 +56,7 @@ export const Header: React.FC<React.PropsWithChildren<Props>> = ({ className, ch
 
     const navItems = [
         { title: getText('header_nav_1_item','КАТАЛОГ ПРОЕКТОВ'), href: '/catalog' },
-        { title: getText('header_nav_2_item','ПАРТФОЛИО'), href: '/portfolio' },
+        { title: getText('header_nav_2_item','ПОРТФОЛИО'), href: '/portfolio' },
         { title: getText('header_nav_3_item','РЕМОНТ КВАРТИР'), href: '/apartment-renovation' },
         { title: getText('header_nav_4_item','ДИЗАЙН-ПРОЕКТ КВАРТИРЫ'), href: '/apartment-design' },
         { title: getText('header_nav_5_item','ДИЗАЙН ИНТЕРЬЕРА ДОМА'), href: '/house-interior-design' },

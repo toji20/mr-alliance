@@ -361,7 +361,7 @@ const experienceStats = [
                     className="flex items-start space-x-3 md:space-x-4 p-3 md:p-4 bg-amber-50 rounded-xl border border-amber-100"
                   >
                     <div className="w-12 h-10 md:w-15 md:h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm">
-                      <span className="text-amber-600 font-bold text-xs md:text-[10px]">{step.stage}</span>
+                      <span className="text-amber-600 font-bold text-[8px] md:text-[10px]">{step.stage}</span>
                     </div>
                     <div>
                       <h3 className="font-semibold text-stone-800 text-sm md:text-lg mb-1 md:mb-2">{step.title}</h3>
@@ -439,13 +439,17 @@ const experienceStats = [
               {getText('cta_description', 'Разработаем дизайн-проект, который подчеркнет архитектуру дома и создаст идеальную среду для вашей семьи')}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button className="bg-stone-800 text-amber-50 font-medium py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-stone-700 transition-colors text-sm">
+              <a href="/contacts" className='w-full'>
+              <button className="w-full bg-stone-800 text-amber-50 font-medium py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-stone-700 transition-colors text-sm">
 
 {getText('cta_button_primary', 'Получить консультацию')}
               </button>
-              <button className="border border-stone-800 text-stone-800 font-medium py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-stone-800 hover:text-amber-50 transition-colors text-sm">
+              </a>
+              <a href="/portfolio" className='w-full'>
+              <button className="w-full border border-stone-800 text-stone-800 font-medium py-2.5 md:py-3 px-4 md:px-6 rounded-lg hover:bg-stone-800 hover:text-amber-50 transition-colors text-sm">
                 {getText('cta_button_secondary', 'Посмотреть портфолио')}
               </button>
+              </a>
             </div>
           </div>
         </motion.div>

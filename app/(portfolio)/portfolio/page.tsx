@@ -12,7 +12,7 @@ export default async function Home() {
   return (
    <>
     <Bg
-        title="ПАРТФОЛИО"
+        title="ПОРТФОЛИО"
         background="/main-bg-6.png"
         btnText="ФОТОГАЛЕРЕЯ" url="#Фотогалерея"/>
     <GalleryPage

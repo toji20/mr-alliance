@@ -259,9 +259,11 @@ export const ReviewsPage: React.FC<Props> = ({items}) => {
               принять правильное решение и нам стать лучше.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button className="bg-stone-700 text-stone-50 font-medium py-3 px-6 rounded-lg hover:bg-stone-600 transition-colors text-sm">
+              <a href="/contacts" className='w-full'>
+              <button className="w-full bg-stone-700 text-stone-50 font-medium py-3 px-6 rounded-lg hover:bg-stone-600 transition-colors text-sm">
                 Связаться с нами
               </button>
+              </a>
               <button className="border border-stone-700 text-stone-700 font-medium py-3 px-6 rounded-lg hover:bg-stone-700 hover:text-stone-50 transition-colors text-sm">
                 Написать отзыв
               </button>

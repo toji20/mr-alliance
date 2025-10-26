@@ -16,7 +16,7 @@ interface Props {
 export const Bg: React.FC<React.PropsWithChildren<Props>> = ({
   title,
   background,
-  btnText = 'ПАРТФОЛИО',
+  btnText = 'ПОРТФОЛИО',
   url
 }) => {
     const [isHovered, setIsHovered] = useState(false);
