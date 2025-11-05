@@ -23,7 +23,7 @@
 .nav-bg__container-block {
     width: 100%;
     padding-left: 0;
-    padding-top: 15%;
+    padding-top: 5%;
 }
 
 .nav-bg__list-item {
@@ -87,6 +87,6 @@
     }
     
     .nav-bg__container-block {
-        padding-top: 10%;
+        padding-top: 5%;
     }
 }
