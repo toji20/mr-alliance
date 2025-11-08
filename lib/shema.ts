@@ -15,6 +15,7 @@ export const adminFormSchemaPhoto = z.object({
   name: z.string().min(1, 'Название обязательно'),
   imageUrl: z.string().min(1, 'URL обязателен'),
   descr: z.string().min(1, 'Описание обязательно'),
+  categoryId: z.number().min(1, 'Категория обязательна')
 });
 
 export type AdminFormValuesPhoto = z.infer<typeof adminFormSchemaPhoto>;
@@ -46,3 +47,9 @@ export const FormRegisterSchema = FormLoginSchema.merge(
 
 export type TFormLoginValues = z.infer<typeof FormLoginSchema>;
 export type TFormRegisterValues = z.infer<typeof FormRegisterSchema>;
+
+export const CategorySchema = z.object({
+  name: z.string().min(1,'Напишите название категории')
+})
+
+export type TCategorySchema = z.infer<typeof CategorySchema>

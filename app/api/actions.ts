@@ -1,6 +1,6 @@
 'use server'
 
-import { AdminFormValues, AdminFormValuesPhoto, ReviewSchema } from "@/lib/shema";
+import { AdminFormValues, AdminFormValuesPhoto, ReviewSchema, TCategorySchema } from "@/lib/shema";
 import { prisma } from "@/prisma/prisma-client";
 import { success } from "zod";
 
@@ -65,7 +65,8 @@ export async function createGalleryImage(formData: AdminFormValuesPhoto) {
             data: {
             name: formData.name,
             imageUrl: formData.imageUrl,
-            descr: formData.descr
+            descr: formData.descr,
+            categoryId: formData.categoryId,
             }
         })
         return { 
@@ -104,5 +105,43 @@ export async function reviewAdd(data: ReviewSchema) {
         }
     } catch (err) {
         console.log(err)
+    }
+}
+
+export async function addCategory(data: TCategorySchema) {
+    try {
+        const category = await prisma.categoryGalleryPhoto.create({
+            data: {
+                name: data.name
+            }
+        })
+        return {
+            success:true,
+            data: {category}
+        }
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export async function deleteCategory(id: number) {
+    try {
+        // Сначала удаляем все фотографии в этой категории
+        await prisma.galleryPhoto.deleteMany({
+            where: { categoryId: id }
+        })
+
+        // Затем удаляем саму категорию
+        await prisma.categoryGalleryPhoto.delete({
+            where: { id: id }
+        })
+        
+        return { success: true }
+    } catch (err) {
+        console.error('Error deleting category:', err)
+        return { 
+            success: false, 
+            error: 'Не удалось удалить категорию' 
+        }
     }
 }

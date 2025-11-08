@@ -1,5 +1,5 @@
 import { hashSync } from 'bcrypt';
-import { constructionArticleTexts, contactsPageTexts, designArticleTexts, designProjectTexts, galleryImages, headerText, houseInteriorDesignTexts, houses, repairArticleTexts } from './constant/constant'
+import { constructionArticleTexts, contactsPageTexts, designArticleTexts, designProjectTexts, galleryImages, headerText, houseInteriorDesignTexts, houses, mockCategories, repairArticleTexts } from './constant/constant'
 import { prisma } from './prisma-client';
 
 
@@ -9,8 +9,17 @@ async function main() {
   await prisma.$executeRaw`TRUNCATE TABLE "GalleryPhoto" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "Review" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "User" RESTART IDENTITY CASCADE`;
-  
+  await prisma.$executeRaw`TRUNCATE TABLE "CategoryGalleryPhoto" RESTART IDENTITY CASCADE`;
+
   console.log('🌱 Начинаем сидинг текстов для дизайн-проекта...')
+
+  for (const category of mockCategories) {
+    await prisma.categoryGalleryPhoto.create({
+      data: {
+        name: category.name,
+      }
+    });
+  }
 
   for (const textData of designProjectTexts) {
     try {
@@ -140,15 +149,9 @@ async function main() {
     });
   }
 
-  for (const photo of galleryImages) {
-    await prisma.galleryPhoto.create({
-      data: {
-        name: photo.name,
-        imageUrl: photo.imageUrl,
-        descr: photo.descr,
-      }
-    });
-  }
+  await prisma.galleryPhoto.createMany({
+    data: galleryImages
+  })
 
   await prisma.user.createMany({
     data: [

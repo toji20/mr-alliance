@@ -13,9 +13,11 @@ interface TextContent {
 
 interface Props {
   items: GalleryPhoto[]
+  name: string
+  categoryId: number
 }
 
-export const GalleryPage: React.FC<React.PropsWithChildren<Props>> = ({ items }) => {
+export const GalleryPage: React.FC<React.PropsWithChildren<Props>> = ({ items, name }) => {
   const [texts, setTexts] = useState<Record<string, string>>({})
   const [loading, setLoading] = useState(true)
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
@@ -77,7 +79,7 @@ export const GalleryPage: React.FC<React.PropsWithChildren<Props>> = ({ items })
   }
 
   return (
-    <div className="min-h-screen bg-stone-50 md:py-16 py-8 px-4 md:pl-[20%] pl-6" id='Фотогалерея'>
+    <div className="bg-stone-50 md:pb-16 pb-8 px-4 md:pl-[20%] pl-6" id='Фотогалерея'>
       <div className="max-w-7xl mx-auto">
         
         <motion.div
@@ -87,18 +89,18 @@ export const GalleryPage: React.FC<React.PropsWithChildren<Props>> = ({ items })
           className="text-center md:mb-16 mb-7"
         >
           <h1 className="text-[24px] md:text-5xl font-light text-stone-800 mb-4">
-            {getText('gallery_title', 'ГАЛЕРЕЯ РАБОТ')}
+            {getText('gallery_title', `${name}`)}
           </h1>
           <div className="w-24 h-1 bg-[#ffe6b6] mx-auto mb-6"></div>
           <p className="md:text-xl text-[20px] text-stone-600 max-w-3xl mx-auto">
-            {getText('gallery_subtitle', 'Лучшие реализованные проекты домов и коттеджей')}
+            {getText('gallery_subtitle', 'Лучшие реализованные проекты')}
           </p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {items.map((image, index) => (
             <GalleryCard
@@ -125,25 +127,6 @@ export const GalleryPage: React.FC<React.PropsWithChildren<Props>> = ({ items })
             imageUrl={image.imageUrl}
           />
           ))}
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center"
-        >
-          <div className="bg-white rounded-xl p-8 shadow-sm border border-stone-200 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-light text-stone-800 mb-3">
-              {getText('cta_title', 'Нравится то, что вы видите?')}
-            </h3>
-            <p className="text-stone-600 text-base mb-6">
-              {getText('cta_description', 'Давайте создадим ваш идеальный дом вместе')}
-            </p>
-            <a href="/contacts">
-            <button className="bg-stone-800 text-amber-50 font-medium py-3 px-8 rounded-lg hover:bg-stone-700 transition-colors">
-              {getText('cta_button', 'Обсудить проект')}
-            </button></a>
-          </div>
         </motion.div>
       </div>
     </div>

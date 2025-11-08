@@ -16,6 +16,11 @@ export default async function Home() {
   })
   const galleryPhoto = await prisma.galleryPhoto.findMany({
   })
+  const galleryCategories = await prisma.categoryGalleryPhoto.findMany({
+    include: {
+      galleryPhoto: true
+    }
+    })
   const session = await getUserSession();
   if (!session?.id) {
     return redirect('/not-auth')
@@ -30,7 +35,7 @@ export default async function Home() {
      }
   return (
     <>
-    <TextEditor items={houses} galleryPhotos={galleryPhoto}/>
+    <TextEditor items={houses} galleryPhotos={galleryPhoto} category={galleryCategories}/>
     </>
   )
 }

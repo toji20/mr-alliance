@@ -1,6 +1,6 @@
 'use client'
 
-import { House, TextContent, GalleryPhoto } from "@prisma/client"
+import { House, TextContent, GalleryPhoto, CategoryGalleryPhoto } from "@prisma/client"
 import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
 import { ProductForm } from "./productform"
@@ -10,10 +10,11 @@ import { CatalogProvider } from "@/contexts/catalog-context"
 interface Props {
   className?: string;
   items: House[]
-  galleryPhotos: GalleryPhoto[]
+  galleryPhotos: GalleryPhoto[],
+  category: CategoryGalleryPhoto[]
 }
 
-export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, galleryPhotos }) => {
+export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, galleryPhotos,category }) => {
   const [texts, setTexts] = useState<TextContent[]>([])
   const [filteredTexts, setFilteredTexts] = useState<TextContent[]>([])
   const [editingId, setEditingId] = useState<string | null>(null)
@@ -307,7 +308,7 @@ export const TextEditor: React.FC<React.PropsWithChildren<Props>> = ({ items, ga
           ) : (
             <div className="bg-white p-8 rounded-lg shadow-sm border">
               <h2 className="text-2xl font-semibold mb-8 text-gray-900">Управление галереей фотографий</h2>
-              <GalleryPhotoForm galleryPhotos={galleryPhotos} />
+              <GalleryPhotoForm galleryPhotos={galleryPhotos} category={category}/>
             </div>
           )}
         </div>

@@ -10,6 +10,8 @@ import { FormProvider, useForm } from "react-hook-form"
 import toast from "react-hot-toast"
 import { v4 as uuidv4 } from 'uuid'
 import { supabase } from "@/lib/supabase"
+import { CategoryGalleryPhoto } from "@prisma/client"
+import { CategoryManager } from "./admin-category-manager"
 
 interface GalleryPhoto {
   id: number
@@ -21,9 +23,10 @@ interface GalleryPhoto {
 interface Props {
   galleryPhotos: GalleryPhoto[]
   className?: string
+  category: CategoryGalleryPhoto[]
 }
 
-export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
+export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos, category }) => {
   const [submitting, setSubmitting] = useState(false)
   const [deletingId, setDeletingId] = useState<number | null>(null)
   const [imageUploading, setImageUploading] = useState(false)
@@ -39,6 +42,7 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
       name: '',
       imageUrl: '',
       descr: '',
+      categoryId: 1,
     },
   })
 
@@ -46,6 +50,7 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
     handleSubmit, 
     reset, 
     setValue,
+    watch,
     formState: { errors } 
   } = formMethods
 
@@ -172,6 +177,27 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
     setAvatar({ file: null, url: "" })
   }
 
+  const renderCategorySelect = () => (
+    <div className="md:col-span-2">
+      <label className="block text-sm font-medium text-gray-700 mb-2">
+        Категория *
+      </label>
+      <select
+        {...formMethods.register('categoryId', { valueAsNumber: true })}
+        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+      >
+        {category.map((cat) => (
+          <option key={cat.id} value={cat.id}>
+            {cat.name}
+          </option>
+        ))}
+      </select>
+      {errors.categoryId && (
+        <p className="mt-1 text-sm text-red-600">{errors.categoryId.message}</p>
+      )}
+    </div>
+  )
+
   return (
     <div className="space-y-8">
       <div className="bg-white p-6 rounded-lg shadow-sm border">
@@ -194,6 +220,8 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
                   <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
                 )}
               </div>
+
+              {renderCategorySelect()}
 
               {/* Поле для загрузки изображения */}
               <div className="md:col-span-2">
@@ -250,7 +278,7 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
 
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Описание *
+                  Описание
                 </label>
                 <textarea
                   {...formMethods.register('descr')}
@@ -284,6 +312,7 @@ export const GalleryPhotoForm: React.FC<Props> = ({ galleryPhotos }) => {
           </form>
         </FormProvider>
       </div>
+      <CategoryManager categories={category}/>
 
       <div className="bg-white p-6 rounded-lg shadow-sm border">
         <h3 className="text-xl font-semibold mb-6 text-gray-900">Управление фотографиями галереи</h3>
